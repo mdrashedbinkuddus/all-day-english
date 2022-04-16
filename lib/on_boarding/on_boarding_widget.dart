@@ -44,7 +44,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                           children: [
                             Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Lottie.asset(
                                   'assets/lottie_animations/ADE-Lottie-1.json',
@@ -97,7 +97,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Lottie.network(
                                   'https://assets10.lottiefiles.com/private_files/lf30_34kxno0g.json',
@@ -183,7 +183,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 0.9),
+                        alignment: AlignmentDirectional(0, 1),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                           child: SmoothPageIndicator(
