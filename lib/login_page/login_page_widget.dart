@@ -53,7 +53,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 52, 16, 4),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 4),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +90,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: DefaultTabController(
                     length: 2,
                     initialIndex: 0,
