@@ -464,49 +464,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            InkWell(
-                                              onTap: () async {
-                                                final user =
-                                                    await signInWithGoogle(
-                                                        context);
-                                                if (user == null) {
-                                                  return;
-                                                }
-                                                await Navigator
-                                                    .pushAndRemoveUntil(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        NavBarPage(
-                                                            initialPage:
-                                                                'HomePage'),
-                                                  ),
-                                                  (r) => false,
-                                                );
-                                              },
-                                              child: Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryColor,
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      blurRadius: 5,
-                                                      color: Color(0x3314181B),
-                                                      offset: Offset(0, 2),
-                                                    )
-                                                  ],
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                alignment:
-                                                    AlignmentDirectional(0, 0),
-                                                child: FaIcon(
-                                                  FontAwesomeIcons.google,
-                                                  color: Colors.white,
-                                                  size: 24,
-                                                ),
+                                            Container(
+                                              width: 50,
+                                              height: 50,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 5,
+                                                    color: Color(0x3314181B),
+                                                    offset: Offset(0, 2),
+                                                  )
+                                                ],
+                                                shape: BoxShape.circle,
+                                              ),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
+                                              child: FaIcon(
+                                                FontAwesomeIcons.google,
+                                                color: Colors.white,
+                                                size: 24,
                                               ),
                                             ),
                                             Container(
