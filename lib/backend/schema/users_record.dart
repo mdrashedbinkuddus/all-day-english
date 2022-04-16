@@ -4,10 +4,10 @@ import 'index.dart';
 import 'serializers.dart';
 import 'package:built_value/built_value.dart';
 
-part 'user_record.g.dart';
+part 'users_record.g.dart';
 
-abstract class UserRecord implements Built<UserRecord, UserRecordBuilder> {
-  static Serializer<UserRecord> get serializer => _$userRecordSerializer;
+abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
+  static Serializer<UsersRecord> get serializer => _$usersRecordSerializer;
 
   @nullable
   String get email;
@@ -35,7 +35,7 @@ abstract class UserRecord implements Built<UserRecord, UserRecordBuilder> {
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
-  static void _initializeBuilder(UserRecordBuilder builder) => builder
+  static void _initializeBuilder(UsersRecordBuilder builder) => builder
     ..email = ''
     ..displayName = ''
     ..photoUrl = ''
@@ -43,26 +43,27 @@ abstract class UserRecord implements Built<UserRecord, UserRecordBuilder> {
     ..phoneNumber = '';
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('user');
+      FirebaseFirestore.instance.collection('users');
 
-  static Stream<UserRecord> getDocument(DocumentReference ref) => ref
+  static Stream<UsersRecord> getDocument(DocumentReference ref) => ref
       .snapshots()
       .map((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
-  static Future<UserRecord> getDocumentOnce(DocumentReference ref) => ref
+  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) => ref
       .get()
       .then((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
-  UserRecord._();
-  factory UserRecord([void Function(UserRecordBuilder) updates]) = _$UserRecord;
+  UsersRecord._();
+  factory UsersRecord([void Function(UsersRecordBuilder) updates]) =
+      _$UsersRecord;
 
-  static UserRecord getDocumentFromData(
+  static UsersRecord getDocumentFromData(
           Map<String, dynamic> data, DocumentReference reference) =>
       serializers.deserializeWith(serializer,
           {...mapFromFirestore(data), kDocumentReferenceField: reference});
 }
 
-Map<String, dynamic> createUserRecordData({
+Map<String, dynamic> createUsersRecordData({
   String email,
   String displayName,
   String photoUrl,
@@ -71,8 +72,8 @@ Map<String, dynamic> createUserRecordData({
   String phoneNumber,
 }) =>
     serializers.toFirestore(
-        UserRecord.serializer,
-        UserRecord((u) => u
+        UsersRecord.serializer,
+        UsersRecord((u) => u
           ..email = email
           ..displayName = displayName
           ..photoUrl = photoUrl
