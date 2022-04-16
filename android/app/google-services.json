@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "970263486800-logsh72ad8l8qvllv5jl25pfl1mrc9jb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.alldayenglish.uk",
+            "certificate_hash": "39e02c52f4fefe325aae9387c0d77cdd19853fd1"
+          }
+        },
+        {
           "client_id": "970263486800-fnfa31qv6r4qlho06uiqe18vp07sr3j2.apps.googleusercontent.com",
           "client_type": 3
         }
