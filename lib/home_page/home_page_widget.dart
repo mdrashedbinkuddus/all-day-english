@@ -39,6 +39,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         elevation: 2,
       ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      drawer: Drawer(
+        elevation: 15,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [],
+        ),
+      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
