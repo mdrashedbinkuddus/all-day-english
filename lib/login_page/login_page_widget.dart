@@ -1,8 +1,8 @@
 import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -361,7 +361,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LoginPageWidget(),
+                                                    NavBarPage(
+                                                        initialPage:
+                                                            'HomePage'),
                                               ),
                                               (r) => false,
                                             );
@@ -475,7 +477,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        LoginPageWidget(),
+                                                        NavBarPage(
+                                                            initialPage:
+                                                                'HomePage'),
                                                   ),
                                                   (r) => false,
                                                 );
@@ -887,22 +891,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               return;
                                             }
 
-                                            final userCreateData =
-                                                createUserRecordData(
-                                              email: '',
-                                              displayName: '',
-                                              photoUrl: '',
-                                              createdTime: getCurrentTimestamp,
-                                            );
-                                            await UserRecord.collection
-                                                .doc(user.uid)
-                                                .update(userCreateData);
-
                                             await Navigator.pushAndRemoveUntil(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    LoginPageWidget(),
+                                                    NavBarPage(
+                                                        initialPage:
+                                                            'HomePage'),
                                               ),
                                               (r) => false,
                                             );
@@ -985,7 +980,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        LoginPageWidget(),
+                                                        NavBarPage(
+                                                            initialPage:
+                                                                'HomePage'),
                                                   ),
                                                   (r) => false,
                                                 );
